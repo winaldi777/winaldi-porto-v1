@@ -17,6 +17,41 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (mobileMenuBtn && mobileMenu) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    
+    // Toggle icon
+    const icon = mobileMenuBtn.querySelector('i');
+    if (mobileMenu.classList.contains('hidden')) {
+      icon.setAttribute('data-lucide', 'menu');
+    } else {
+      icon.setAttribute('data-lucide', 'x');
+    }
+    lucide.createIcons();
+  });
+}
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenuBtn.querySelector('i').setAttribute('data-lucide', 'menu');
+    lucide.createIcons();
+  });
+});
+
+// Re-initialize Lucide icons after DOM updates
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+});
+
 // Data skills yang akan ditampilkan
 const skills = {
   frontend: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS'],

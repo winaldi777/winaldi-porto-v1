@@ -18,60 +18,96 @@
 
   <!--NAVBAR-->
   <nav id="navbar"
-  class="container mx-auto px-10 py-2 sticky top-0 z-50 flex justify-between mt-3
-         border border-white/50 bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg
-         transition-transform duration-500 ease-in-out">
-    <h1 class="font-bold text-xl text-white flex items-center">WINN.</h1>
-    <ul class="flex gap-8 text-white/80 font-semibold">
-      <li class="hover:text-emerald-400 hover:scale-110 py-3 px-2 transition-transform duration-100 cursor-pointer"><a href="project.html">
-        Project</a></li>
-      <li class="hover:text-emerald-400 hover:scale-110 py-3 px-2 transition-transform duration-100 cursor-pointer"><a href="about.html">
-        Blog</a></li>
-    </ul>
-  </nav>
+    class="container mx-auto mt-[1rem] px-4 sm:px-10 py-3 sticky top-0 z-50 
+          border border-white/50 bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg
+          transition-transform duration-500 ease-in-out">
+    
+    <div class="flex justify-between items-center">
+      <h1 class="font-bold text-xl text-white flex items-center">WINN.</h1>
+      
+      <!-- untuk desktop -->
+      <ul class="hidden md:flex gap-6 lg:gap-8 text-white/80 font-semibold">
+        <li class="hover:text-emerald-400 hover:scale-110 py-3 px-2 transition-transform duration-100 cursor-pointer">
+          <a href="project.html">Project</a>
+        </li>
+        <li class="hover:text-emerald-400 hover:scale-110 py-3 px-2 transition-transform duration-100 cursor-pointer">
+          <a href="about.html">Blog</a>
+        </li>
+      </ul>
 
-  <!--ATAS-->
-  <div class="mt-10 mb-[2rem] flex text-white gap-5">
-    <div class="flex gap-10 items-center px-5">
-      <img src="/assets/pasfoto.jpg" alt="" class="rounded w-48 h-48 object-cover">
+      <!-- untuk mobile -->
+      <button id="mobileMenuBtn" class="md:hidden text-white p-2 md:mx-[1rem]">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
     </div>
 
-    <div class="flex flex-col gap-5 justify-center">
+    <!-- dropdown mobile -->
+    <div id="mobileMenu" class="hidden md:hidden pb-2 border-t border-white/20">
+      <ul class="flex flex-col gap-2 text-white/80 font-semibold">
+        <li class="hover:text-emerald-400 py-2 px-3 transition-colors cursor-pointer">
+          <a href="project.html">Project</a>
+        </li>
+        <li class="hover:text-emerald-400 py-2 px-3 transition-colors cursor-pointer">
+          <a href="about.html">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ATAS-->
+  <div class="mt-8 sm:mt-10 mb-8 sm:mb-[2rem] flex flex-col sm:flex-row text-white gap-6 sm:gap-5 px-4 sm:px-0">
+    
+    <!-- foto profile -->
+    <div class="flex justify-center sm:justify-start">
+      <img src="/assets/pasfoto.jpg" alt="Profile" 
+          class="rounded w-32 h-32 sm:w-48 sm:h-48 object-cover border-2 border-white/20">
+    </div>
+
+    <!-- info -->
+    <div class="flex flex-col gap-4 justify-center text-center sm:text-left">
       <div>
-        <h1 class="flex font-semibold text-2xl items-center gap-2">
+        <h1 class="flex font-semibold text-xl sm:text-2xl items-center justify-center sm:justify-start gap-2">
           Winaldi Tamba 
-          <i data-lucide="badge-check" class="text-[#1DA1F2] h-5 w-5"></i></h1>
-        <h3 class="text-xs text-white/80 flex items-center gap-1">
-          <i data-lucide="map-pin" class=" w-4 h-4"></i>
-          Batam, Kepulauan Riau, Indonesia</h3>
-        <p class="text-sm mt-5">Universitas Advent Indonesia / Aspiring Web Developer</p>
+          <i data-lucide="badge-check" class="text-[#1DA1F2] h-4 w-4 sm:h-5 sm:w-5"></i>
+        </h1>
+        <h3 class="text-xs text-white/80 flex items-center justify-center sm:justify-start gap-1 mt-1">
+          <i data-lucide="map-pin" class="w-4 h-4"></i>
+          Batam, Kepulauan Riau, Indonesia
+        </h3>
+        <p class="text-sm mt-3 sm:mt-5">Universitas Advent Indonesia / Aspiring Web Developer</p>
       </div>
-      <div class="text-sm gap-2 flex">
-        <a href="/assets/cv-winaldi.pdf" download><button
-        class="flex border-[0.5px] px-3 py-4 bg-white text-black cursor-pointer 
-             hover:bg-emerald-600 hover:text-white hover:scale-102 active:bg-emerald-800 
-               transition-transform duration-100">
-               <i data-lucide="file-text" class="mr-1 w-5 h-5 "></i>
-          View Resume</button></a>
-        <a href="mailto:wnaldytmbaa@gmail.com?subject=Hiring Opportunity&body=Halo Winaldi, saya melihat portofolio Anda dan tertarik untuk berdiskusi lebih lanjut."><button 
-        class="flex border-[0.5px] px-3 py-4 bg-white/10 cursor-pointer hover:bg-black/5 
-               hover:scale-102 active:bg-black transition-transform duration-100">
-               <i data-lucide="mail" class="mr-1 w-5 h-5 "></i>
-          Send Email</button></a>
+      
+      <!-- buttons -->
+      <div class="text-sm gap-2 flex flex-col sm:flex-row justify-center sm:justify-start mx-[2rem]">
+        <a href="/assets/cv-winaldi.pdf" download>
+          <button class="flex items-center justify-center border-[0.5px] px-4 py-3 bg-white text-black cursor-pointer 
+              hover:bg-emerald-600 hover:text-white hover:scale-102 active:bg-emerald-800 
+              transition-transform duration-100 rounded-lg w-full sm:w-auto">
+            <i data-lucide="file-text" class="mr-2 w-4 h-4 sm:w-5 sm:h-5"></i>
+            <span class="text-sm">View Resume</span>
+          </button>
+        </a>
+        <a href="mailto:wnaldytmbaa@gmail.com?subject=Hiring Opportunity&body=Halo Winaldi...">
+          <button class="flex items-center justify-center border-[0.5px] px-4 py-3 bg-white/10 cursor-pointer 
+                hover:bg-black/5 hover:scale-102 active:bg-black transition-transform duration-100 rounded-lg w-full sm:w-auto">
+            <i data-lucide="mail" class="mr-2 w-4 h-4 sm:w-5 sm:h-5"></i>
+            <span class="text-sm">Send Email</span>
+          </button>
+        </a>
       </div>
     </div>
   </div>
 
-  <!--ABOUT & SKILL & EXPERIENCE-->
-  <section class="grid grid-cols-12 gap-5 text-white mb-7">
+  <!-- ABOUT & SKILL & EXPERIENCE -->
+  <section class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-5 text-white mb-7 px-4 sm:px-0 mx-[1rem]">
 
-    <section class="col-span-7 bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-5 pb-8">
-      <h2 class="flex gap-2 text-xl font-semibold items-center mb-5">
+    <!-- About -->
+    <section class="lg:col-span-7 bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-4 sm:p-5 pb-6 sm:pb-8">
+      <h2 class="flex gap-2 text-lg sm:text-xl font-semibold items-center mb-4">
         <i data-lucide="info" class="w-5 h-5"></i>About
       </h2>
-      
       <div>
-        <p class="text-sm">
+        <p class="text-sm leading-relaxed">
           I am a 3rd-year Informatics Engineering student at Adventist University of Indonesia, 
           passionate about building modern and user-centered digital solutions. I am currently 
           focusing on becoming a full stack developer by learning both front-end and back-end technologies. <br><br>
@@ -83,97 +119,106 @@
           I am committed to continuous growth and self-improvement in the field of software development. With a 
           strong desire to learn and adapt, I aim to develop into a professional full stack developer who can 
           create impactful and reliable digital solutions.
-
         </p>
       </div>
     </section>
 
-    <section class="row-span-2 col-span-5 bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-5">
-      <h2 class="flex gap-2 text-xl font-semibold items-center mb-5"><i data-lucide="briefcase-business" class="w-5 h-5"></i>
-          Experience</h2>
-      <!-- <div id="experience" class="relative border-l border-gray-700 ml-3 space-y-8"> -->
-      <div id="experiences" class="relative border-l border-gray-700 ml-3 space-y-8">
-      </div>
+    <!-- Experience -->
+    <section class="lg:col-span-5 bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-4 sm:p-5">
+      <h2 class="flex gap-2 text-lg sm:text-xl font-semibold items-center mb-4">
+        <i data-lucide="briefcase-business" class="w-5 h-5"></i>Experience
+      </h2>
+      <div id="experiences" class="relative border-l border-gray-700 ml-3 space-y-6 sm:space-y-8"></div>
     </section>
 
-    <section class="col-span-7 bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-5">
-      <h2 class="flex gap-2 text-xl font-semibold items-center mb-5"><i data-lucide="code" class="w-5 h-5"></i>
-          Skills</h2>
-      
-      <div id="tech-stack" class="space-y-6"></div>
+    <!-- Skills -->
+    <section class="lg:col-span-7 bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-4 sm:p-5">
+      <h2 class="flex gap-2 text-lg sm:text-xl font-semibold items-center mb-4">
+        <i data-lucide="code" class="w-5 h-5"></i>Skills
+      </h2>
+      <div id="tech-stack" class="space-y-4 sm:space-y-6"></div>
     </section>
 
   </section>
 
-  <!--RECENT PROJECT & CERTIFICATIONS-->
-  <section class="grid grid-cols-2 gap-5 text-white">
+  <!-- RECENT PROJECT & CERTIFICATIONS -->
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 text-white px-4 sm:px-0 mx-[1rem]">
 
-    <section class="col-span-1 bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-5 pb-8">
-      <h2 class="flex gap-2 text-xl font-semibold items-center mb-5"><i data-lucide="layout-dashboard" class="w-5 h-5"></i>
-          Recent Projects</h2> 
+    <section class="bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-4 sm:p-5 pb-6 sm:pb-8">
+      <h2 class="flex gap-2 text-lg sm:text-xl font-semibold items-center mb-4">
+        <i data-lucide="layout-dashboard" class="w-5 h-5"></i>Recent Projects
+      </h2> 
       <div></div>
     </section>
 
-    <section class="col-span-1 bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-5 pb-8">
-      <h2 class="flex gap-2 text-xl font-semibold items-center mb-5"><i data-lucide="shield-check" class="w-5 h-5"></i>
-          Recent Certifications</h2> 
-      <div id="certifications" class="space-y-4"></div>
+    <section class="bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-4 sm:p-5 pb-6 sm:pb-8">
+      <h2 class="flex gap-2 text-lg sm:text-xl font-semibold items-center mb-4">
+        <i data-lucide="shield-check" class="w-5 h-5"></i>Recent Certifications
+      </h2> 
+      <div id="certifications" class="space-y-3 sm:space-y-4"></div>
     </section>
 
   </section>
 
-  <!--GOAL & SOCIAL LINK & CONTACT ME-->
-  <section class="grid grid-cols-3 gap-5 text-white mt-5 bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-5">
-  
-    <section class="col-span-1 flex flex-col gap-3">
-      <h3 class="font-bold"><i data-lucide="goal" class="w-4 h-4 mr-2 inline-block"></i>
-        Goals</h3>
+  <!-- GOAL & SOCIAL LINK & CONTACT ME - Updated -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 text-white mt-5 
+                  bg-[#1f2d3a] border-[#2a3a4a] border rounded-lg p-4 sm:p-5 mx-[2rem] sm:mx-[1rem]">
+
+    <!-- Goals -->
+    <section class="flex flex-col gap-3 mx-[1rem]">
+      <h3 class="font-bold text-base"><i data-lucide="goal" class="w-4 h-4 mr-2 inline-block"></i>Goals</h3>
       <div class="bg-[#2a3a4a] rounded-lg p-3 border border-white/30">
-        <p class="text-sm">become a professional full stack developer and continuously improve my skills to build impactful digital solutions.</p>
+        <p class="text-sm">Become a professional full stack developer and continuously improve my skills...</p>
       </div>
     </section>
 
-    <section class="col-span-1 flex flex-col gap-3">
-      <h3 class="font-bold"><i data-lucide="link" class="w-4 h-4 mr-2 inline-block"></i>
-        Social Link</h3>
-      <button 
-      class="bg-[#2a3a4a] rounded-lg p-3 border border-white/30 hover:bg-white/75 
-           hover:text-black hover:scale-102 transition-transform duration-50 cursor-pointer active:bg-white">
-        <a href="https://www.linkedin.com/in/winalditamba/" target="_blank" class="text-sm flex items-center gap-1 font-medium">
-          <i data-lucide="linkedin" class="w-4 h-4 mr-2 inline-block"></i>
-          LinkedIn</a></button>
-      <button 
-      class="bg-[#2a3a4a] rounded-lg p-3 border border-white/30 hover:bg-white/75 
-           hover:text-black hover:scale-102 transition-transform duration-50 cursor-pointer active:bg-white">
-        <a href="https://www.instagram.com/winaltb?igsh=N3VxMmhuMTc2YW9j/" target="_blank" class="text-sm flex items-center gap-1 font-medium">
-          <i data-lucide="instagram" class="w-4 h-4 mr-2 inline-block"></i>
-          Instagram</a></button>
+    <!-- Social Links -->
+    <section class="flex flex-col gap-3 mx-[1rem]">
+      <h3 class="font-bold text-base"><i data-lucide="link" class="w-4 h-4 mr-2 inline-block"></i>Social Link</h3>
+      <div class="flex flex-col gap-2">
+        <button class="bg-[#2a3a4a] rounded-lg p-3 border border-white/30 hover:bg-white/75 
+                    hover:text-black hover:scale-102 transition-transform duration-50 cursor-pointer text-left">
+          <a href="https://www.linkedin.com/in/winalditamba/" target="_blank" 
+            class="text-sm flex items-center gap-2 font-medium">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>LinkedIn
+          </a>
+        </button>
+        <button class="bg-[#2a3a4a] rounded-lg p-3 border border-white/30 hover:bg-white/75 
+                    hover:text-black hover:scale-102 transition-transform duration-50 cursor-pointer text-left">
+          <a href="https://www.instagram.com/winaltb?igsh=N3VxMmhuMTc2YW9j/" target="_blank" 
+            class="text-sm flex items-center gap-2 font-medium">
+            <i data-lucide="instagram" class="w-4 h-4"></i>Instagram
+          </a>
+        </button>
+      </div>
     </section>
 
-    <section class="flex flex-col gap-3 col-span-1">
-
-      <h3 class="font-bold"><i data-lucide="message-circle-more" class="w-4 h-4 mr-2 inline-block"></i>
-        Contact Me</h3>
-
-      <button id="openEmailModal"
-      class="flex items-center gap-1 bg-[#2a3a4a] rounded-lg p-3 border border-white/30 
-      hover:bg-white/75 active:bg-white/90 hover:text-black hover:scale-102 transition-transform duration-50 cursor-pointer">
-        <i data-lucide="mail" class="w-5 h-5 mr-2 inline-block"></i>
-        <div class="flex flex-col gap-1">
-          <p class="text-sm font-medium text-left">Email</p>
-          <span class="text-xs">wnaldytmbaa@gmail.com</span>
-        </div>
-      </button>
-      <button 
-      class="bg-[#2a3a4a]  rounded-lg p-3 border border-white/30 hover:bg-white/75 active:bg-white/90 
-      hover:text-black hover:scale-102 transition-transform duration-50 cursor-pointer">
-        <a href="https://wa.me/081275654425" class="flex items-center gap-1" target="_blank"><i data-lucide="phone" class="w-5 h-5 mr-2 inline-block"></i>
-        <div class="flex flex-col gap-1">
-          <p class="text-sm font-medium text-left">Let's Talk</p>
-          <span class="text-xs">+62 812 7565 4425</span>
-        </div></a>
-      </button>
+    <!-- Contact -->
+    <section class="flex flex-col gap-3 mx-[1rem]">
+      <h3 class="font-bold text-base"><i data-lucide="message-circle-more" class="w-4 h-4 mr-2 inline-block"></i>Contact Me</h3>
+      <div class="flex flex-col gap-2">
+        <button id="openEmailModal"
+          class="flex items-center gap-2 bg-[#2a3a4a] rounded-lg p-3 border border-white/30 
+          hover:bg-white/75 active:bg-white/90 hover:text-black hover:scale-102 transition-transform duration-50 cursor-pointer text-left">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          <div class="flex flex-col gap-0">
+            <p class="text-sm font-medium">Email</p>
+            <span class="text-xs text-white/70">wnaldytmbaa@gmail.com</span>
+          </div>
+        </button>
+        <button class="bg-[#2a3a4a] rounded-lg p-3 border border-white/30 hover:bg-white/75 active:bg-white/90 
+          hover:text-black hover:scale-102 transition-transform duration-50 cursor-pointer text-left">
+          <a href="https://wa.me/6281275654425" class="flex items-center gap-2" target="_blank">
+            <i data-lucide="phone" class="w-5 h-5"></i>
+            <div class="flex flex-col gap-0">
+              <p class="text-sm font-medium">Let's Talk</p>
+              <span class="text-xs text-white/70">+62 812 7565 4425</span>
+            </div>
+          </a>
+        </button>
+      </div>
     </section>
+    
   </section>
     
   <script src="/assets/js/script.js" defer></script>
